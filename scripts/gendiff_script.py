@@ -1,8 +1,12 @@
-from gendiff import get_args, get_file_data, gendiff, format
+from pathlib import Path
+
+from gendiff import format, gendiff
+
+DIR_FILE = Path(__file__).parent / 'tests' / 'fixtures'
+
+
 def main():    
-    #args = get_args()
-    file_data = get_file_data('./files/file1.json')
-    diff = gendiff('./files/file1.json', './files/file2.json')
+    diff = gendiff(DIR_FILE / 'file1.json', DIR_FILE / 'file2.json')
     format_diff = format(diff)
     print(format_diff)
 

@@ -1,4 +1,6 @@
-import argparse, json
+import argparse
+import json
+
 
 def get_args():
     parser = argparse.ArgumentParser(
@@ -43,17 +45,18 @@ def gendiff(file_path1, file_path2):
             }
     return diff
 
+
 def format(dict):
-    list = []
+    result_list = []
     for key, item in dict.items():
         if item['type'] == 'added':
-            list.append(f'  + {key}: {item['value']}')
+            result_list .append(f'  + {key}: {item['value']}')
         elif item['type'] == 'removed':
-            list.append(f'  - {key}: {item['value']}')
+            result_list .append(f'  - {key}: {item['value']}')
         elif item['type'] == 'updated':
-            list.append(f'  - {key}: {item['value_old']}')
-            list.append(f'  + {key}: {item['value_new']}')
+            result_list .append(f'  - {key}: {item['value_old']}')
+            result_list .append(f'  + {key}: {item['value_new']}')
         else:
-            list.append(f'  {key}: {item['value']}')
+            result_list .append(f'  {key}: {item['value']}')
 
-    return f"{{\n{'\n'.join(list)}\n}}"
+    return f"{{\n{'\n'.join(result_list)}\n}}"
