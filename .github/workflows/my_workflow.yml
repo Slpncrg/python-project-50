@@ -30,7 +30,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=slpncrg_python-project-50
+            -Dsonar.projectKey=Slpncrg_python-project-50
             -Dsonar.organization=slpncrg
             -Dsonar.python.coverage.reportPaths=coverage.xml
             -Dsonar.coverage.exclusions=tests/**
