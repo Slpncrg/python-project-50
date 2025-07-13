@@ -5,12 +5,14 @@ def item_added(key, value):
         'value_new': value
     }
 
+
 def item_removed(key, value):
     return {
         'type': 'removed',
         'name': key,
         'value_old': value
     }
+
 
 def item_updated(key, value1, value2):
     return {
@@ -19,6 +21,7 @@ def item_updated(key, value1, value2):
         'value_old': value1,
         'value_new': value2
     }
+
 
 def item_unchanged(key, value):
     return {

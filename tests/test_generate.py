@@ -11,8 +11,6 @@ from gendiff.scripts.parser import read_file
     ('tests/fixtures/file1.yaml',
      'tests/fixtures/file2.yaml',
      'tests/fixtures/expected_yaml.txt')])
-
-
 def test_generate_diff(file_path1, file_path2, expected_result):
     diff = generate_diff(file_path1, file_path2)
     print(diff)
