@@ -30,3 +30,6 @@ uninstall:
 start:
 	uv build
 	uv tool install --reinstall dist/*.whl
+
+lint_fix:
+	uv run ruff check . --fix
