@@ -40,6 +40,9 @@ def make_stylish_diff(diff, spaces_count=2):
             lines.append(f"{indent}{REM}{key}: {value_old}")
         elif action == "added":
             lines.append(f"{indent}{ADD}{key}: {value_new}")
+        elif action == 'nested':
+            children = make_stylish_diff(item.get("children"), spaces_count + 4)
+            lines.append(f"{indent}{NONE}{key}: {children}")
     formatted_string = '\n'.join(lines)
     end_indent = SEPARATOR * (spaces_count - 2)
 

@@ -26,3 +26,7 @@ reinstall:
 
 uninstall:
 	uv tool uninstall hexlet-code
+
+start:
+	uv build
+	uv tool install --reinstall dist/*.whl

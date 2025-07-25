@@ -31,6 +31,14 @@ def item_unchanged(key, value):
     }
 
 
+def items_nested(key, value1, value2):
+    return {
+        'type': 'nested',
+        'name': key,
+        'children': find_diff(value1, value2)
+    }
+
+
 def find_diff(data1, data2):
     keys_union = data1.keys() | data2.keys()
     keys_added = data2.keys() - data1.keys()
@@ -46,6 +54,8 @@ def find_diff(data1, data2):
             diff.append(item_added(key, value2))
         elif key in keys_deleted:
             diff.append(item_removed(key, value1))
+        elif isinstance(value1, dict) and isinstance(value2, dict):
+            diff.append(items_nested(key, value1, value2))
         elif value1 != value2:
             diff.append(item_updated(key, value1, value2))
         else:
