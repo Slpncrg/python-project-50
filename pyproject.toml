@@ -18,7 +18,7 @@ dev-dependencies = [
 
 [project.scripts]
 hexlet-python-package = "gendiff.scripts.main:main"
-gendiff = "gendiff.scripts.gendiff:main"
+gendiff = "gendiff.scripts.generate_diff:main"
 
 
 [build-system]
