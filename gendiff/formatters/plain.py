@@ -21,7 +21,7 @@ def create_plain_item(item, path=''):
     ADD = ' was added with value: '
     REMOVE = ' was removed'
     UPD = ' was updated. From '
-    UPD_to = ' to '
+    UPD_TO = ' to '
     PROP = 'Property '
 
     if action == 'added':
@@ -29,7 +29,7 @@ def create_plain_item(item, path=''):
     if action == 'removed':
         return f"{PROP}'{current_path}'{REMOVE}"
     if action == 'updated':
-        return f"{PROP}'{current_path}'{UPD}{value_old}{UPD_to}{value_new}"
+        return f"{PROP}'{current_path}'{UPD}{value_old}{UPD_TO}{value_new}"
     if action == 'nested':
         children = item.get('children')
         return make_plain_diff(children, current_path)

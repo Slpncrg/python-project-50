@@ -26,5 +26,5 @@ def read_file(file_path):
 
 def parse_data_from_file(file_path):
     data = read_file(file_path)
-    format = get_file_format(file_path)
-    return parse_data(data, format)
+    parse_format = get_file_format(file_path)
+    return parse_data(data, parse_format)

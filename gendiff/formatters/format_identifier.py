@@ -2,9 +2,6 @@ from gendiff.formatters.json import format_diff_json
 from gendiff.formatters.plain import format_diff_plain
 from gendiff.formatters.stylish import format_diff_stylish
 
-# from gendiff.formatters.plain import format_diff_plain
-# from gendiff.formatters.stylish import format_diff_stylish
-
 
 def format_identifier(diff, formatter):
     if formatter == 'stylish':
